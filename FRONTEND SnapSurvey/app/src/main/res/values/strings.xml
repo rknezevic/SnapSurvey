@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">SnapSurvey</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="question"> Type a multiple choice question here! </string>
+    <string name="agree"> I agree </string>
+    <string name="m_agree"> I mostly agree</string>
+    <string name="n_agree"> I neither agree nor disagree </string>
+    <string name="disagree"> I mostly disagree </string>
+    <string name="m_disagree"> I disagree </string>
+</resources>

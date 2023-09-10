@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "437771958316",
+    "project_id": "qme-knezevic",
+    "storage_bucket": "qme-knezevic.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:437771958316:android:5835d5542205ec76e13989",
+        "android_client_info": {
+          "package_name": "com.robertknezevic.qme"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "437771958316-curb132v9u165k5agsdkok3ccsvmj96u.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCC1FtVjptuZsDSKSsqCEMnXyjReYsvzAQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "437771958316-curb132v9u165k5agsdkok3ccsvmj96u.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

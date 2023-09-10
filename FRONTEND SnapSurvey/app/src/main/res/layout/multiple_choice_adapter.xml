@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:background="@drawable/gradient_bg"
+    android:layout_width="match_parent"
+    android:layout_height="200dp">
+
+    <RadioGroup
+        android:id="@+id/radioGroup"
+        android:layout_width="292dp"
+        android:layout_height="124dp"
+        android:layout_marginTop="10dp"
+        app:layout_constraintStart_toStartOf="@+id/multipleChoiceQuestionText"
+        app:layout_constraintTop_toBottomOf="@+id/multipleChoiceQuestionText" />
+
+    <TextView
+        android:id="@+id/multipleChoiceQuestionText"
+        android:layout_width="349dp"
+        android:layout_height="34dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="20dp"
+        android:text="TextView"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+</androidx.constraintlayout.widget.ConstraintLayout>

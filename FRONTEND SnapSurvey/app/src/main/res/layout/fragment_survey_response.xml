@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/gradient_bg"
+    tools:context=".SurveyResponse">
+
+    <TextView
+        android:id="@+id/responseTitle"
+        android:layout_width="234dp"
+        android:layout_height="53dp"
+        android:layout_marginStart="15dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginEnd="15dp"
+        android:layout_marginBottom="5dp"
+        android:background="?attr/selectableItemBackground"
+        android:ems="10"
+        android:textColorHint="@color/dark_slate_blue"
+        android:textSize="40sp"
+        android:textStyle="bold|italic"
+        app:layout_constraintBottom_toTopOf="@+id/surveyResponseRecyclerView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/submitButtonResponse"
+        android:layout_width="wrap_content"
+        android:layout_height="60dp"
+        android:layout_marginStart="317dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginEnd="45dp"
+        android:layout_marginBottom="25dp"
+        android:text="Submit"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/surveyResponseRecyclerView" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/surveyResponseRecyclerView"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toTopOf="@+id/submitButtonResponse"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/responseTitle" />
+
+    <TextView
+        android:id="@+id/surveyResponseDescription"
+        android:layout_width="81dp"
+        android:layout_height="27dp"
+        android:layout_marginStart="40dp"
+        android:text="TextView"
+        app:layout_constraintBottom_toBottomOf="@+id/responseTitle"
+        app:layout_constraintStart_toEndOf="@+id/responseTitle"
+        app:layout_constraintTop_toTopOf="@+id/responseTitle" />
+</androidx.constraintlayout.widget.ConstraintLayout>

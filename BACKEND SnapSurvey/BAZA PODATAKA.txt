@@ -1,0 +1,67 @@
+CREATE EXTENSION IF NOT EXISTS "uuid-ossp"; 
+
+CREATE TABLE "User" (
+  "Id" UUID NOT NULL DEFAULT uuid_generate_v4() PRIMARY KEY,
+  "FirstName" VARCHAR(50),
+  "LastName" VARCHAR(50),
+  "Username" VARCHAR(50) NOT NULL,
+  "Email" VARCHAR(100) NOT NULL,
+  "Password" VARCHAR(100) NOT NULL,
+  "DateCreated" TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+  "DateUpdated" TIMESTAMP default CURRENT_TIMESTAMP,
+  "LoginTime" TIMESTAMP,
+  "LogoutTime" TIMESTAMP
+);
+
+CREATE TABLE "Survey" (
+  "Id" UUID NOT NULL PRIMARY KEY,
+  "Title" VARCHAR(100),
+  "Description" text,
+  "IsFilled" BOOLEAN default false,
+  "CreatedByUserId" UUID not null,
+  "UpdatedByUserId" UUID not null,
+  "DateCreated" TIMESTAMP not null,
+  "DateUpdated" TIMESTAMP not null
+);
+
+CREATE TABLE "Question" (
+  "Id" UUID NOT NULL PRIMARY KEY,
+  "SurveyId" UUID NOT NULL,
+  "QuestionText" TEXT,
+  "IsAnswered" BOOLEAN DEFAULT FALSE,
+  "CreatedByUserId" UUID not null,
+  "UpdatedByUserId" UUID not null,
+  "DateCreated" TIMESTAMP not null,
+  "DateUpdated" TIMESTAMP not null,
+  constraint "FK_Question_Survey_SurveyId" FOREIGN KEY ("SurveyId") REFERENCES "Survey" ("Id")
+);
+
+CREATE TABLE "Answer" (
+  "Id" UUID NOT NULL PRIMARY KEY,
+  "UserId" UUID NOT NULL,
+  "QuestionId" UUID NOT NULL,
+  "AnswerText" TEXT,
+  "CreatedByUserId" UUID not null,
+  "UpdatedByUserId" UUID not null,
+  "DateCreated" TIMESTAMP not null,
+  "DateUpdated" TIMESTAMP not null,
+  constraint "FK_Answer_User_UserId" FOREIGN KEY ("UserId") REFERENCES "User" ("Id"),
+  constraint "FK_Answer_Question_QuestionId" FOREIGN KEY ("QuestionId") REFERENCES "Question" ("Id")
+);
+
+CREATE TABLE "UserGroup" (
+  "Id" UUID NOT NULL PRIMARY KEY,
+  "GroupName" VARCHAR(255),
+  "UserId" UUID NOT NULL,
+  constraint "FK_UserGroup_User_UserId" FOREIGN KEY ("UserId") REFERENCES "User" ("Id")
+);
+
+CREATE TABLE "SurveyAssignment" (
+  "Id" UUID NOT NULL PRIMARY KEY,
+  "SurveyId" UUID NOT NULL,
+  "UserId" UUID NOT NULL,
+  "GroupId" UUID NOT NULL,
+  constraint "FK_SurveyAssignment_Survey_SurveyId" FOREIGN KEY ("SurveyId") REFERENCES "Survey" ("Id"),
+  constraint "FK_SurveyAssignment_User_UserId" FOREIGN KEY ("UserId") REFERENCES "User" ("Id"),
+  constraint "FK_SurveyAssignment_UserGroup_UserGroupId" FOREIGN KEY ("GroupId") REFERENCES "UserGroup" ("Id")
+);
